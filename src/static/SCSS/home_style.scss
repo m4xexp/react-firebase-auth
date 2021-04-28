@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;700&display=swap");
+
+$text-color: #2b1055;
+$gradient-color: #7597de;
+$base-color: #fff;
+
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient($text-color, $gradient-color);
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 100px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba($color: $text-color, $alpha: 0.5);
+
+  .logo {
+    color: $base-color;
+    font-size: 1.5em;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    li {
+      list-style: none;
+      margin-left: 20px;
+
+      a {
+        color: $base-color;
+        text-decoration: none;
+        padding: 6px 15px;
+        // transition: 0.5s ease-in-out;
+        border-radius: 20px;
+
+        &:hover {
+          background-color: $base-color;
+          color: $text-color;
+        }
+      }
+    }
+  }
+}
+
+.paralax {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #1c0522, transparent);
+    z-index: 1000;
+  }
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+
+    object-fit: cover;
+    left: 0;
+    top: 0;
+  }
+
+  #mountains-front {
+    z-index: 10;
+  }
+
+  #moon {
+    mix-blend-mode: screen;
+  }
+
+  #text-themoon {
+    position: absolute;
+    color: $base-color;
+    font-weight: 700;
+    font-size: 4.5em;
+    white-space: nowrap;
+    z-index: 9;
+    right: -200px;
+  }
+
+  #btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 30px;
+    border-radius: 40px;
+    color: $text-color;
+    background: $base-color;
+    font-size: 1em;
+    z-index: 9;
+    transform: translateY(100px);
+
+    // &:hover {
+    //   background: transparent;
+    //   color: $base-color;
+    // }
+  }
+}
+
+.lorem {
+  position: relative;
+  padding: 100px;
+  background: #1c0522;
+
+  h1 {
+    color: $base-color;
+    font-size: 3.5em;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: $base-color;
+    font-size: 1em;
+  }
+}
